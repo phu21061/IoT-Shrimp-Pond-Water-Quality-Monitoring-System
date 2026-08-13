@@ -1,0 +1,27 @@
+command/relay2  : có sw cho tự đấu day rồi bậc tắt 
+config/  
+	bu sai so: cộng thêm chênh lệch 
+	current max min:  đặt cảnh báo dòng min max
+	Do  .................
+	Ph.................
+ 	ph_neutral với slope bỏ qua 
+	relay1 
+		auto_on_hour : nghĩa là ban ngày có thể tắt còi báo động và ban đêm tự bậc lên theo giờ set trước 0-23h  (tự làm dưới eessp rồi chỉ cần lệnh ô tùy chọn)
+		enabled : true là bậc false tắt
+
+	latest_interval_ms: thời gian gửi nhánh latest 
+
+	history_interval_ms: thời gian gửi nhánh udate
+
+ latest/
+
+	pzem/ 
+		quan trọng nhất là dòng điện 
+		
+		power_factor: là cos phi hệ số công suất
+		
+		valid: sôngs hay chết: 
+	uptime_s: eesp còn song không 
+note/ bỏ qua 
+
+update như cũ 

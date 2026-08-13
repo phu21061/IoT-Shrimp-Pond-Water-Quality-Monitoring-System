@@ -1,0 +1,47 @@
+>> Tìm thấy thiết bị! Slave ID: 3, Baudrate: 9600, Giá trị thanh ghi 0x07D0: 3    PH
+>> Tìm thấy thiết bị! Slave ID: 2, Baudrate: 9600, Giá trị thanh ghi 0x07D0: 2    DO
+>> Tìm thấy thiết bị! Slave ID: 1, Baudrate: 9600, Giá trị thanh ghi 0x0002: 1    PZEM
+
+CAM BIEN pH (RS-PH-N01-3) - Slave ID hien tai: 3, Baudrate: 9600
+--------------------------------------------------------------------
+Dia chi thanh ghi | PLC Address | Ham ho tro          | Y nghia
+0x0000            | 40001        | 0x03/0x04           | Gia tri pH (16-bit unsigned integer, gia tri thuc = gia tri doc / 100)
+0x0001            | 40002        | 0x03/0x04           | Nhiet do (16-bit signed integer, gia tri thuc = gia tri doc / 10)
+0x0050            | 40081        | 0x03/0x04/0x06      | Gia tri lech pH (16-bit signed integer, gia tri thuc = gia tri doc / 100)
+0x0051            | 40082        | 0x03/0x04/0x06      | Gia tri lech nhiet do (16-bit signed integer, gia tri thuc = gia tri doc / 10)
+0x0060            | 40097        | 0x03/0x04/0x06      | Co bu tay hay khong (1: Co, 0: Khong)
+0x0061            | 40098        | 0x03/0x04/0x06      | Gia tri bu tay nhiet do (16-bit signed integer, gia tri thuc = gia tri doc / 10)
+0x0120, 0x0121    | 40289, 40290 | 0x10                | Hieu chuan dien cuc (su dung cap 2 thanh ghi)
+0x07D0            | 42001        | 0x03/0x04/0x06/0x10 | Dia chi thiet bi: 1-254 (mac dinh 1) -> DA DAT: 3
+0x07D1            | 42002        | 0x03/0x04/0x06/0x10 | Baudrate: 0=2400,1=4800,2=9600,3=19200,4=38400,5=57600,6=115200,7=1200 -> DA DAT: 2 (9600)
+
+2. CAM BIEN DO - RS-LDO-N01 Fluorescent Dissolved Oxygen Transmitter - Slave ID hien tai: 2, Baudrate: 9600
+------------------------------------------------------------------------------------------------------------
+Dia chi thanh ghi | Ham ho tro          | Y nghia
+0x0000, 0x0001    | 0x03/0x04           | Do bao hoa oxy hoa tan (1 = 100%; so thuc dau phay dong, Big Endian)
+0x0002, 0x0003    | 0x03/0x04           | Nong do oxy hoa tan (mg/L; so thuc dau phay dong, Big Endian)
+0x0004, 0x0005    | 0x03/0x04           | Nhiet do (do C; so thuc dau phay dong, Big Endian)
+0x1010            | 0x06/0x10           | Hieu chuan (ghi 0x0001: hieu chuan diem 0; ghi 0x0002: hieu chuan diem bao hoa 100%)
+0x1020            | 0x03/0x04/0x06/0x10 | Do man (phan nghin ppt; 16-bit unsigned integer, mac dinh 0)
+0x1022            | 0x03/0x04/0x06/0x10 | Ap suat khi quyen (kPa; mac dinh 101.33; 16-bit unsigned integer, gia tri thuc = gia tri doc / 100)
+0x07D0            | 0x03/0x04/0x06/0x10 | Dia chi thiet bi: 1-254 (mac dinh 1) -> DA DAT: 2
+0x07D1            | 0x03/0x04/0x06/0x10 | Baudrate: 0=2400,1=4800,2=9600,3=19200,4=38400,5=57600,6=115200 -> DA DAT: 2 (9600)
+
+3. CAM BIEN DIEN NANG PZEM-016 - Slave ID hien tai: 1 (mac dinh, chua xac nhan quet thuc te)
+--------------------------------------------------------------------
+Dia chi thanh ghi | Ham ho tro | Y nghia
+0x0000            | 0x04       | Dien ap (V) - 16-bit, do phan giai 0.1 V/LSB
+0x0001, 0x0002    | 0x04       | Dong dien (A) - 32-bit (High Word + Low Word), do phan giai 0.001 A/LSB
+0x0003, 0x0004    | 0x04       | Cong suat (W) - 32-bit (High Word + Low Word), do phan giai 0.1 W/LSB
+0x0005, 0x0006    | 0x04       | Dien nang tieu thu (Wh) - 32-bit (High Word + Low Word), do phan giai 1 Wh/LSB
+0x0007            | 0x04       | Tan so luoi dien (Hz) - 16-bit, do phan giai 0.1 Hz/LSB
+0x0008            | 0x04       | He so cong suat (Power Factor) - 16-bit, do phan giai 0.01/LSB
+0x0009            | 0x04       | Trang thai canh bao (0xFFFF: Co canh bao; 0x0000: Khong co canh bao)
+0x0002            | 0x06       | Dia chi thiet bi (Modbus RTU address): 0x01-0xF7 (mac dinh 0x01) -> CAN GHI DE DAT DIA CHI RIENG, TRANH TRUNG VOI 1,2,3
+
+GHI CHU TONG HOP:
+- Ca 3 thiet bi dung chung 1 cong RS485, moi thiet bi PHAI co Slave ID rieng biet.
+- Hien tai: pH = 3, DO = 2, PZEM = 1 (can xac nhan lai PZEM bang scan thuc te, tranh trung voi pH/DO).
+- Baudrate cua ca 3 thiet bi PHAI GIONG NHAU tren cung 1 bus (dang dung 9600).
+- Thanh ghi dat dia chi khac nhau giua cac loai cam bien: pH/DO dung 0x07D0, PZEM dung 0x0002.
+- Cam bien DO tra ve du lieu dang so thuc dau phay dong (float) Big Endian 32-bit (2 thanh ghi/gia tri), khac voi pH va PZEM dung so nguyen 16/32-bit.

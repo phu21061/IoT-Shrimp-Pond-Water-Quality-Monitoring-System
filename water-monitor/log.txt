@@ -1,0 +1,454 @@
+03:42:50.136 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.> ERROR.connected: Not connected because write error is set.
+03:42:50.152 > > ERROR.connected: SSL Write error
+03:42:50.152 > 
+03:42:50.152 > > > ERROR.connected: Not connected because write error is set.
+03:42:50.157 > > ERROR.connected: SSL Write error
+03:42:50.162 > > ERROR.mUpdateEngine: ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.173 > Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.179 > > ERROR.connected: Not connected because write error is set.
+03:42:50.184 > > ERROR.connected: SSL Write error
+03:42:50.184 > > ERROR.connected: Not connected because write error is set.
+03:42:50.190 > > ERROR.connected: SSL Write error
+03:42:50.195 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.201 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.211 > > ERROR.connected: Not connected because write error is set.
+03:42:50.216 > > ERROR.connected: SSL Write error
+03:42:50.216 > > ERROR.connected: Not connected because write error is set.
+03:42:50.222 > > ERROR.connected: SSL Write error
+03:42:50.228 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.233 > > ERROR.connected: Not connected because write error is set.
+03:42:50.238 > > ERROR.connected: SSL Write error
+03:42:50.244 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.249 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.259 > > ERROR.connected: Not connected because write error is set.
+03:42:50.264 > > ERROR.connected: SSL Write error
+03:42:50.264 > > ERROR.connected: Not connected because write error is set.
+03:42:50.271 > > ERROR.connected: SSL Write error
+03:42:50.276 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.281 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.293 > > ERROR.connected: Not connected because write error is set.
+03:42:50.297 > > ERROR.connected: SSL Write error
+03:42:50.297 > > ERROR.connected: Not connected because write error is set.
+03:42:50.303 > > ERROR.connected: SSL Write error
+03:42:50.309 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.313 > > ERROR.mUpdateEngine: > ERROR.connected: Not connected because write error is set.
+03:42:50.325 > > ERROR.connected: SSL Write error
+03:42:50.325 > Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.329 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.341 > > ERROR.connected: Not connected because write error is set.
+03:42:50.346 > > ERROR.connected: SSL Write error
+03:42:50.346 > > ERROR.connected: Not connected because write error is set.
+03:42:50.351 > > ERROR.connected: SSL Write error
+03:42:50.356 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.362 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the ssl engine is not ready for data.
+03:42:50.373 > > ERROR.connected: Not connected because write error is set.
+03:42:50.378 > > ERROR.connected: SSL Write error
+03:42:50.378 > > ERROR.mUpdateEngine: Error _write_idx > 0 but the sGuru Meditation Error: Core  1 panic'ed (Unhandled debug exception). 
+03:42:50.431 > Debug exception reason: Stack canary watchpoint triggered (MeasureTask) 
+03:42:50.436 > Core  1 register dump:
+03:42:50.436 > PC      : 0x403790b9  PS      : 0x00060136  A0      : 0x3fcb0ac0  A1      : 0x3fcb0a00  
+  #0  0x403790b9 in _xt_lowint1 at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/freertos/port/xtensa/xtensa_vectors.S:1083
+
+03:42:50.446 > A2      : 0x00000000  A3      : 0x3fcec8b0  A4      : 0x3fcec864  A5      : 0x00000001  
+03:42:50.513 > A6      : 0xffffffff  A7      : 0x00000002  A8      : 0x8037dd70  A9      : 0x3fcb0aa0  
+03:42:50.513 > A10     : 0x3fcec8b0  A11     : 0xffffffff  A12     : 0x3fcec8b0  A13     : 0x3fcec874  
+03:42:50.513 > A14     : 0x3fcec888  A15     : 0x00000000  SAR     : 0x0000000a  EXCCAUSE: 0x00000001  
+03:42:50.513 > EXCVADDR: 0x00000000  LBEG    : 0x400556d5  LEND    : 0x400556e5  LCOUNT  : 0xfffffff0  
+03:42:50.513 > 
+03:42:50.513 > 
+03:42:50.513 > Backtrace: 0x403790b6:0x3fcb0a00 0x3fcb0abd:0x3fcb0b00 |<-CORRUPTED
+  #0  0x403790b6 in _xt_lowint1 at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/freertos/port/xtensa/xtensa_vectors.S:1082
+
+03:42:50.513 > 
+03:42:50.513 > 
+03:42:50.513 > 
+03:42:50.513 > 
+03:42:50.513 > ELF file SHA256: 7c76ff38b88f00c2
+03:42:50.513 > 
+03:42:50.813 > Rebooting...
+03:42:50.813 >   ESP-ROM:esp32s3-20210327
+03:42:50.824 > Build:Mar 27 2021
+03:42:50.824 > rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+03:42:50.829 > Saved PC:0x420d0156
+  #0  0x420d0156 in esp_pm_impl_waiti at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_pm/pm_impl.c:855
+
+03:42:50.829 > SPIWP:0xee
+03:42:50.883 > mode:DIO, clock div:1
+03:42:50.883 > load:0x3fce3808,len:0x4bc
+03:42:50.883 > load:0x403c9700,len:0xbd8
+03:42:50.883 > load:0x403cc700,len:0x2a0c
+03:42:50.883 > entry 0x403c98d0
+03:42:51.091 > [   273][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+03:42:51.620 > 
+03:42:51.620 > ╔═══════════════════════════════════════════════╗
+03:42:51.631 > ║   Smart Water Monitoring System  v2.1         ║
+03:42:51.636 > ║   FW 2.0.0     Device DCB4D91B9CB8        ║
+03:42:51.641 > ╚═══════════════════════════════════════════════╝
+03:42:51.651 > [I][MAIN] Free heap : 299796 B
+03:42:51.657 > [I][MAIN] PSRAM size: 8386279 B
+03:42:51.657 > [I][MAIN] Flash size: 16777216 B
+03:42:51.663 > 
+03:42:51.663 > [I][MAIN] WDT armed (60 s)
+03:42:51.663 > [D][LED] Status LED on pin 6
+03:42:51.667 > [I][ALERT] Alert outputs: LED=-1  BUZZER=-1  (-1 = disabled)
+03:42:51.673 > [I][SENSOR] Initialising sensors ...
+03:42:51.673 > [I][SENSOR] pH  Analog ADC Pin=7  VRef=3300mV
+03:42:51.679 > [I][SENSOR] DO  UART2  RX=18  TX=17  baud=4800  ModbusID=1
+03:42:51.883 > [I][WIFI] Initialising WiFi (FW 2.0.0, Device DCB4D91B9CB8)
+03:42:51.940 > [I][WIFI] Connecting to 'Kingshouse B204-B206' ...
+03:42:52.442 > [I][WIFI] Connected! IP: 192.168.21.48  RSSI: -51 dBm
+03:42:52.442 > [I][TIME] Syncing NTP: pool.ntp.org / time.google.com  offset=25200s
+03:42:52.447 > [I][TIME] Time synced: 2026-05-17 03:42:41 (local)
+03:42:52.453 > [I][FIREBASE] Initialising Firebase v2 ...
+03:42:52.458 > Token info: type = id token (GITKit token), status = on request
+03:42:53.253 > Token info: type = id token (GITKit token), status = ready
+03:42:53.254 > [I][FIREBASE] Firebase init requested. Auth token pending ...
+03:42:53.259 > [I][MAIN] Waiting for Firebase token ...
+03:42:53.788 > [I][FIREBASE] Config updated: interval=600000ms pH[5.0-7.0] DO_min=9.0
+03:42:53.793 > [I][FIREBASE]   -> pH calib: neutral=1450.0mV, slope=285.70mV/pH
+03:42:53.799 > [I][MAIN] Setup complete.
+03:42:53.799 > [I][MAIN]   Measurement interval : 600000 ms
+03:42:53.804 > [I][MAIN]   pH thresholds        : [5.0, 7.0]
+03:42:53.809 > [I][MAIN]   DO min threshold     : 9.0 mg/L
+03:42:53.865 > [I][MAIN] ──── Measurement cycle START ────
+03:42:54.066 > [D][SENSOR] pH Analog ADC=2110  Voltage=1700.4mV  pH=6.12
+03:42:54.174 > [D][SENSOR] DO=5.91 mg/L  Sat=90.0%  Tdo=28.3°C
+03:42:54.174 > [I][SENSOR] @ 2026-05-17T03:42:42+07:00 | pH=6.12(OK) | DO=5.91 mg/L  Sat=90.0%  T=28.3°C (OK)
+03:42:54.185 > [W][ALERT] ALERT: DO 5.91 mg/L < min 9.00
+03:42:54.190 > [W][ALERT] Edge alert OUTPUT ON.
+03:42:54.190 > [W][MAIN] Threshold violation mask: 0x08
+03:42:54.244 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.91)
+03:42:54.302 > [I][FIREBASE] Latest updated at 2026-05-17T03:42:42+07:00
+03:42:54.350 > [I][FIREBASE] History pushed at 2026-05-17T03:42:42+07:00
+03:42:54.350 > [D][BUFFER] Buffered reading 1/500
+03:42:54.400 > [I][MAIN] Buffer: 1/500 readings. Next measure in 600 s.
+03:42:54.401 > [I][MAIN] ──── Measurement cycle END ────
+03:43:24.862 > [I][ALERT] Edge alert OUTPUT OFF.
+03:47:51.581 > [I][FIREBASE] Config updated: interval=600000ms pH[5.0-7.0] DO_min=9.0
+03:47:51.587 > [I][FIREBASE]   -> pH calib: neutral=1450.0mV, slope=285.70mV/pH
+03:47:51.593 > [I][MAIN] Config refreshed. interval=600000 ms
+03:52:54.384 > [I][MAIN] ──── Measurement cycle START ────
+03:52:54.584 > [D][SENSOR] pH Analog ADC=2104  Voltage=1695.5mV  pH=6.14
+03:52:54.693 > [D][SENSOR] DO=5.85 mg/L  Sat=89.0%  Tdo=28.3°C
+03:52:54.693 > [I][SENSOR] @ 2026-05-17T03:52:49+07:00 | pH=6.14(OK) | DO=5.85 mg/L  Sat=89.0%  T=28.3°C (OK)
+03:52:54.705 > [W][ALERT] ALERT: DO 5.85 mg/L < min 9.00
+03:52:54.709 > [W][ALERT] Edge alert OUTPUT ON.
+03:52:54.709 > [W][MAIN] Threshold violation mask: 0x08
+03:52:55.013 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.85)
+03:52:55.077 > [I][FIREBASE] Latest updated at 2026-05-17T03:52:49+07:00
+03:52:55.144 > [I][FIREBASE] History pushed at 2026-05-17T03:52:49+07:00
+03:52:55.144 > [D][BUFFER] Buffered reading 2/500
+03:52:55.205 > [I][MAIN] Buffer: 2/500 readings. Next measure in 600 s.
+03:52:55.205 > [I][MAIN] ──── Measurement cycle END ────
+03:53:24.849 > [I][ALERT] Edge alert OUTPUT OFF.
+04:02:55.189 > [I][MAIN] ──── Measurement cycle START ────
+04:02:55.389 > [D][SENSOR] pH Analog ADC=2103  Voltage=1694.7mV  pH=6.14
+04:02:55.499 > [D][SENSOR] DO=5.78 mg/L  Sat=87.9%  Tdo=28.2°C
+04:02:55.499 > [I][SENSOR] @ 2026-05-17T04:02:50+07:00 | pH=6.14(OK) | DO=5.78 mg/L  Sat=87.9%  T=28.2°C (OK)
+04:02:55.508 > [W][ALERT] ALERT: DO 5.78 mg/L < min 9.00
+04:02:55.515 > [W][ALERT] Edge alert OUTPUT ON.
+04:02:55.515 > [W][MAIN] Threshold violation mask: 0x08
+04:02:55.794 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.78)
+04:02:55.853 > [I][FIREBASE] Latest updated at 2026-05-17T04:02:50+07:00
+04:02:55.909 > [I][FIREBASE] History pushed at 2026-05-17T04:02:50+07:00
+04:02:55.910 > [D][BUFFER] Buffered reading 3/500
+04:02:55.966 > [I][MAIN] Buffer: 3/500 readings. Next measure in 600 s.
+04:02:55.966 > [I][MAIN] ──── Measurement cycle END ────
+04:03:25.836 > [I][ALERT] Edge alert OUTPUT OFF.
+04:12:55.950 > [I][MAIN] ──── Measurement cycle START ────
+04:12:56.150 > [D][SENSOR] pH Analog ADC=2097  Voltage=1689.9mV  pH=6.16
+04:12:56.258 > [D][SENSOR] DO=5.72 mg/L  Sat=86.9%  Tdo=28.1°C
+04:12:56.259 > [I][SENSOR] @ 2026-05-17T04:12:51+07:00 | pH=6.16(OK) | DO=5.72 mg/L  Sat=86.9%  T=28.1°C (OK)
+04:12:56.270 > [W][ALERT] ALERT: DO 5.72 mg/L < min 9.00
+04:12:56.275 > [W][ALERT] Edge alert OUTPUT ON.
+04:12:56.275 > [W][MAIN] Threshold violation mask: 0x08
+04:12:56.572 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.72)
+04:12:56.638 > [I][FIREBASE] Latest updated at 2026-05-17T04:12:51+07:00
+04:12:56.697 > [I][FIREBASE] History pushed at 2026-05-17T04:12:51+07:00
+04:12:56.697 > [D][BUFFER] Buffered reading 4/500
+04:12:56.757 > [I][MAIN] Buffer: 4/500 readings. Next measure in 600 s.
+04:12:56.758 > [I][MAIN] ──── Measurement cycle END ────
+04:13:26.821 > [I][ALERT] Edge alert OUTPUT OFF.
+04:22:56.741 > [I][MAIN] ──── Measurement cycle START ────
+04:22:56.941 > [D][SENSOR] pH Analog ADC=2100  Voltage=1691.9mV  pH=6.15
+04:22:57.050 > [D][SENSOR] DO=5.63 mg/L  Sat=85.4%  Tdo=28.1°C
+04:22:57.050 > [I][SENSOR] @ 2026-05-17T04:22:52+07:00 | pH=6.15(OK) | DO=5.63 mg/L  Sat=85.4%  T=28.1°C (OK)
+04:22:57.061 > [W][ALERT] ALERT: DO 5.63 mg/L < min 9.00
+04:22:57.067 > [W][ALERT] Edge alert OUTPUT ON.
+04:22:57.067 > [W][MAIN] Threshold violation mask: 0x08
+04:22:57.335 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.63)
+04:22:57.386 > [I][FIREBASE] Latest updated at 2026-05-17T04:22:52+07:00
+04:22:57.436 > [I][FIREBASE] History pushed at 2026-05-17T04:22:52+07:00
+04:22:57.436 > [D][BUFFER] Buffered reading 5/500
+04:22:57.489 > [I][MAIN] Buffer: 5/500 readings. Next measure in 600 s.
+04:22:57.489 > [I][MAIN] ──── Measurement cycle END ────
+04:23:27.805 > [I][ALERT] Edge alert OUTPUT OFF.
+04:32:57.473 > [I][MAIN] ──── Measurement cycle START ────
+04:32:57.673 > [D][SENSOR] pH Analog ADC=2095  Voltage=1688.3mV  pH=6.17
+04:32:57.782 > [D][SENSOR] DO=5.53 mg/L  Sat=83.8%  Tdo=28.0°C
+04:32:57.783 > [I][SENSOR] @ 2026-05-17T04:32:52+07:00 | pH=6.17(OK) | DO=5.53 mg/L  Sat=83.8%  T=28.0°C (OK)
+04:32:57.793 > [W][ALERT] ALERT: DO 5.53 mg/L < min 9.00
+04:32:57.798 > [W][ALERT] Edge alert OUTPUT ON.
+04:32:57.798 > [W][MAIN] Threshold violation mask: 0x08
+04:32:58.053 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.53)
+04:32:58.106 > [I][FIREBASE] Latest updated at 2026-05-17T04:32:52+07:00
+04:32:58.153 > [I][FIREBASE] History pushed at 2026-05-17T04:32:52+07:00
+04:32:58.153 > [D][BUFFER] Buffered reading 6/500
+04:32:58.201 > [I][MAIN] Buffer: 6/500 readings. Next measure in 600 s.
+04:32:58.202 > [I][MAIN] ──── Measurement cycle END ────
+04:33:28.790 > [I][ALERT] Edge alert OUTPUT OFF.
+04:37:47.784 > Token info: type = id token (GITKit token), status = on refreshing
+04:37:48.488 > Token info: type = id token (GITKit token), status = ready
+04:42:55.997 > [I][MAIN] ==== Daily log upload START ====
+04:42:55.997 > [I][BUFFER] JSON serialised: 6 entries, 679 bytes
+04:42:56.002 > [I][FIREBASE] Uploading JSON array to RTDB: /devices/DCB4D91B9CB8/logs/2026-05-17
+04:42:56.315 > [I][FIREBASE] JSON upload OK. Key: -OsmjUXXsVD8y42729_L
+04:42:56.315 > [I][BUFFER] Buffer cleared.
+04:42:56.320 > [I][MAIN] Daily JSON uploaded and buffer cleared.
+04:42:56.644 > [I][MAIN] ==== Daily log upload END ====
+04:42:58.428 > [I][MAIN] ──── Measurement cycle START ────
+04:42:58.628 > [D][SENSOR] pH Analog ADC=2095  Voltage=1688.3mV  pH=6.17
+04:42:58.737 > [D][SENSOR] DO=5.44 mg/L  Sat=82.4%  Tdo=28.0°C
+04:42:58.737 > [I][SENSOR] @ 2026-05-17T04:42:53+07:00 | pH=6.17(OK) | DO=5.44 mg/L  Sat=82.4%  T=28.0°C (OK)
+04:42:58.749 > [W][ALERT] ALERT: DO 5.44 mg/L < min 9.00
+04:42:58.752 > [W][ALERT] Edge alert OUTPUT ON.
+04:42:58.752 > [W][MAIN] Threshold violation mask: 0x08
+04:42:58.823 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.44)
+04:42:58.901 > [I][FIREBASE] Latest updated at 2026-05-17T04:42:53+07:00
+04:42:58.966 > [I][FIREBASE] History pushed at 2026-05-17T04:42:53+07:00
+04:42:58.967 > [D][BUFFER] Buffered reading 1/500
+04:42:59.034 > [I][MAIN] Buffer: 1/500 readings. Next measure in 600 s.
+04:42:59.034 > [I][MAIN] ──── Measurement cycle END ────
+04:43:08.967 > [I][FIREBASE] Config updated: interval=600000ms pH[5.0-7.0] DO_min=9.0
+04:43:08.973 > [I][FIREBASE]   -> pH calib: neutral=1450.0mV, slope=285.70mV/pH
+04:43:08.979 > [I][MAIN] Config refreshed. interval=600000 ms
+04:43:29.479 > [I][ALERT] Edge alert OUTPUT OFF.
+04:52:59.017 > [I][MAIN] ──── Measurement cycle START ────
+04:52:59.217 > [D][SENSOR] pH Analog ADC=2088  Voltage=1682.2mV  pH=6.19
+04:52:59.328 > [D][SENSOR] DO=5.32 mg/L  Sat=80.5%  Tdo=27.9°C
+04:52:59.328 > [I][SENSOR] @ 2026-05-17T04:52:54+07:00 | pH=6.19(OK) | DO=5.32 mg/L  Sat=80.5%  T=27.9°C (OK)
+04:52:59.338 > [W][ALERT] ALERT: DO 5.32 mg/L < min 9.00
+04:52:59.344 > [W][ALERT] Edge alert OUTPUT ON.
+04:52:59.344 > [W][MAIN] Threshold violation mask: 0x08
+04:52:59.680 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.32)
+04:52:59.751 > [I][FIREBASE] Latest updated at 2026-05-17T04:52:54+07:00
+04:52:59.817 > [I][FIREBASE] History pushed at 2026-05-17T04:52:54+07:00
+04:52:59.817 > [D][BUFFER] Buffered reading 2/500
+04:52:59.880 > > ERROR.mUpdateEngine: Error reading bytes from basic client. Write Error: 0
+04:52:59.885 > > ERROR.connected: Not connected because write error is set.> ERROR.connected: Not connected because write error is set.
+04:52:59.897 > 
+04:52:59.897 > > ERROR.connected: SSL Write error
+04:52:59.897 > > ERROR.connected> : SSL Write error
+04:52:59.901 > ERROR.available: SSL engine failed to update.
+04:52:59.907 > [I][MAIN] Buffer: 2/500 readings. Next measure in 600 s.
+04:52:59.913 > [I][MAIN] ──── Measurement cycle END ────
+04:53:29.464 > [I][ALERT] Edge alert OUTPUT OFF.
+05:02:59.895 > [I][MAIN] ──── Measurement cycle START ────
+05:03:00.094 > [D][SENSOR] pH Analog ADC=2091  Voltage=1685.1mV  pH=6.18
+05:03:00.205 > [D][SENSOR] DO=5.19 mg/L  Sat=78.4%  Tdo=27.9°C
+05:03:00.205 > [I][SENSOR] @ 2026-05-17T05:02:55+07:00 | pH=6.18(OK) | DO=5.19 mg/L  Sat=78.4%  T=27.9°C (OK)
+05:03:00.216 > [W][ALERT] ALERT: DO 5.19 mg/L < min 9.00
+05:03:00.222 > [W][ALERT] Edge alert OUTPUT ON.
+05:03:00.222 > [W][MAIN] Threshold violation mask: 0x08
+05:03:00.494 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.19)
+05:03:00.563 > [I][FIREBASE] Latest updated at 2026-05-17T05:02:55+07:00
+05:03:00.622 > [I][FIREBASE] History pushed at 2026-05-17T05:02:55+07:00
+05:03:00.622 > [D][BUFFER] Buffered reading 3/500
+05:03:00.679 > [I][MAIN] Buffer: 3/500 readings. Next measure in 600 s.
+05:03:00.679 > [I][MAIN] ──── Measurement cycle END ────
+05:03:30.450 > [I][ALERT] Edge alert OUTPUT OFF.
+05:12:55.693 > [I][MAIN] ──── Measurement cycle START ────
+05:12:55.893 > [D][SENSOR] pH Analog ADC=2087  Voltage=1681.8mV  pH=6.19
+05:12:56.001 > [D][SENSOR] DO=5.04 mg/L  Sat=76.4%  Tdo=28.0°C
+05:12:56.002 > [I][SENSOR] @ 2026-05-17T05:12:56+07:00 | pH=6.19(OK) | DO=5.04 mg/L  Sat=76.4%  T=28.0°C (OK)
+05:12:56.013 > [W][ALERT] ALERT: DO 5.04 mg/L < min 9.00
+05:12:56.018 > [W][ALERT] Edge alert OUTPUT ON.
+05:12:56.018 > [W][MAIN] Threshold violation mask: 0x08
+05:12:56.342 > [I][FIREBASE] Alert pushed: DO_LOW (val=5.04)
+05:12:56.418 > [I][FIREBASE] Latest updated at 2026-05-17T05:12:56+07:00
+05:12:56.492 > [I][FIREBASE] History pushed at 2026-05-17T05:12:56+07:00
+05:12:56.492 > [D][BUFFER] Buffered reading 4/500
+05:12:56.563 > [I][MAIN] Buffer: 4/500 readings. Next measure in 600 s.
+05:12:56.563 > [I][MAIN] ──── Measurement cycle END ────
+05:13:26.466 > [I][ALERT] Edge alert OUTPUT OFF.
+05:22:56.547 > [I][MAIN] ──── Measurement cycle START ────
+05:22:56.747 > [D][SENSOR] pH Analog ADC=2079  Voltage=1675.4mV  pH=6.21
+05:22:56.857 > [D][SENSOR] DO=4.84 mg/L  Sat=73.5%  Tdo=28.2°C
+05:22:56.858 > [I][SENSOR] @ 2026-05-17T05:22:56+07:00 | pH=6.21(OK) | DO=4.84 mg/L  Sat=73.5%  T=28.2°C (OK)
+05:22:56.868 > [W][ALERT] ALERT: DO 4.84 mg/L < min 9.00
+05:22:56.873 > [W][ALERT] Edge alert OUTPUT ON.
+05:22:56.873 > [W][MAIN] Threshold violation mask: 0x08
+05:22:56.888 > > ERROR.mUpdateEngine: Error reading bytes from basic client. Write Error: 0
+05:22:56.894 > > ERROR.connected: Not connected because write error is set.> WARN.mRunUntil: Terminating with write error.
+05:22:56.905 > 
+05:22:56.905 > > ERROR.write: Failed while waiting for the engine to enter BR_SSL_SENDAPP.> 
+05:22:56.910 > ERROR.connected: SSL Write error
+05:22:56.910 > > ERROR.connected: Not connected because write error is set.
+05:22:56.916 > > ERROR.connected: SSL Write error
+05:22:56.922 > > WARN.mRunUntil: Terminating with write error.
+05:22:56.926 > > ERROR.flush: Could not flush write buffer!
+05:22:56.926 > > ERROR.flush: SSL Write error
+05:22:56.932 > [E][FIREBASE] sendAlert failed: not connected
+05:22:56.937 > > ERROR.available: SSL engine failed to update.
+05:22:57.251 > [I][FIREBASE] Latest updated at 2026-05-17T05:22:56+07:00
+05:22:57.318 > [I][FIREBASE] History pushed at 2026-05-17T05:22:56+07:00
+05:22:57.318 > [D][BUFFER] Buffered reading 5/500
+05:22:57.380 > [I][MAIN] Buffer: 5/500 readings. Next measure in 600 s.
+05:22:57.380 > [I][MAIN] ──── Measurement cycle END ────
+05:23:27.450 > [I][ALERT] Edge alert OUTPUT OFF.
+05:32:44.441 > Token info: type = id token (GITKit token), status = on refreshing
+05:32:45.186 > Token info: type = id token (GITKit token), status = ready
+05:32:57.364 > [I][MAIN] ──── Measurement cycle START ────
+05:32:57.564 > [D][SENSOR] pH Analog ADC=2087  Voltage=1681.8mV  pH=6.19
+05:32:57.672 > [D][SENSOR] DO=4.60 mg/L  Sat=70.2%  Tdo=28.5°C
+05:32:57.673 > [I][SENSOR] @ 2026-05-17T05:32:57+07:00 | pH=6.19(OK) | DO=4.60 mg/L  Sat=70.2%  T=28.5°C (OK)
+05:32:57.684 > [W][ALERT] ALERT: DO 4.60 mg/L < min 9.00
+05:32:57.688 > [W][ALERT] Edge alert OUTPUT ON.
+05:32:57.688 > [W][MAIN] Threshold violation mask: 0x08
+05:32:57.960 > [I][FIREBASE] Alert pushed: DO_LOW (val=4.60)
+05:32:58.015 > [I][FIREBASE] Latest updated at 2026-05-17T05:32:57+07:00
+05:32:58.095 > [I][FIREBASE] History pushed at 2026-05-17T05:32:57+07:00
+05:32:58.096 > [D][BUFFER] Buffered reading 6/500
+05:32:58.130 > [I][MAIN] Buffer: 6/500 readings. Next measure in 600 s.
+05:32:58.130 > [I][MAIN] ──── Measurement cycle END ────
+05:33:28.183 > [I][ALERT] Edge alert OUTPUT OFF.
+05:42:51.271 > [I][MAIN] ==== Daily log upload START ====
+05:42:51.271 > [I][BUFFER] JSON serialised: 6 entries, 679 bytes
+05:42:51.276 > [I][FIREBASE] Uploading JSON array to RTDB: /devices/DCB4D91B9CB8/logs/2026-05-17
+05:42:51.542 > [I][FIREBASE] JSON upload OK. Key: -OsmxDVLGPjrXOTzVtfY
+05:42:51.543 > [I][BUFFER] Buffer cleared.
+05:42:51.547 > [I][MAIN] Daily JSON uploaded and buffer cleared.
+05:42:51.872 > [I][MAIN] ==== Daily log upload END ====
+05:42:58.114 > [I][MAIN] ──── Measurement cycle START ────
+05:42:58.314 > [D][SENSOR] pH Analog ADC=2078  Voltage=1675.0mV  pH=6.21
+05:42:58.422 > [D][SENSOR] DO=4.36 mg/L  Sat=66.8%  Tdo=28.7°C
+05:42:58.422 > [I][SENSOR] @ 2026-05-17T05:42:58+07:00 | pH=6.21(OK) | DO=4.36 mg/L  Sat=66.8%  T=28.7°C (OK)
+05:42:58.433 > [W][ALERT] ALERT: DO 4.36 mg/L < min 9.00
+05:42:58.439 > [W][ALERT] Edge alert OUTPUT ON.
+05:42:58.439 > [W][MAIN] Threshold violation mask: 0x08
+05:42:58.756 > [I][FIREBASE] Alert pushed: DO_LOW (val=4.36)
+05:42:58.828 > [I][FIREBASE] Latest updated at 2026-05-17T05:42:58+07:00
+05:42:58.895 > [I][FIREBASE] History pushed at 2026-05-17T05:42:58+07:00
+05:42:58.895 > [D][BUFFER] Buffered reading 1/500
+05:42:58.966 > [I][MAIN] Buffer: 1/500 readings. Next measure in 600 s.
+05:42:58.966 > [I][MAIN] ──── Measurement cycle END ────
+05:43:20.808 > [I][FIREBASE] Config updated: interval=600000ms pH[5.0-7.0] DO_min=9.0
+05:43:20.814 > [I][FIREBASE]   -> pH calib: neutral=1450.0mV, slope=285.70mV/pH
+05:43:20.819 > [I][MAIN] Config refreshed. interval=600000 ms
+05:43:29.169 > [I][ALERT] Edge alert OUTPUT OFF.
+05:52:58.950 > [I][MAIN] ──── Measurement cycle START ────
+05:52:59.150 > [D][SENSOR] pH Analog ADC=2085  Voltage=1680.2mV  pH=6.19
+05:52:59.259 > [D][SENSOR] DO=4.15 mg/L  Sat=63.8%  Tdo=28.9°C
+05:52:59.260 > [I][SENSOR] @ 2026-05-17T05:52:59+07:00 | pH=6.19(OK) | DO=4.15 mg/L  Sat=63.8%  T=28.9°C (OK)
+05:52:59.270 > [W][ALERT] ALERT: DO 4.15 mg/L < min 9.00
+05:52:59.276 > [W][ALERT] Edge alert OUTPUT ON.
+05:52:59.276 > [W][MAIN] Threshold violation mask: 0x08
+05:52:59.549 > [I][FIREBASE] Alert pushed: DO_LOW (val=4.15)
+05:52:59.609 > [I][FIREBASE] Latest updated at 2026-05-17T05:52:59+07:00
+05:52:59.661 > [I][FIREBASE] History pushed at 2026-05-17T05:52:59+07:00
+05:52:59.661 > [D][BUFFER] Buffered reading 2/500
+05:52:59.714 > [I][MAIN] Buffer: 2/500 readings. Next measure in 600 s.
+05:52:59.715 > [I][MAIN] ──── Measurement cycle END ────
+05:53:30.151 > [I][ALERT] Edge alert OUTPUT OFF.
+06:02:59.697 > [I][MAIN] ──── Measurement cycle START ────
+06:02:59.897 > [D][SENSOR] pH Analog ADC=2078  Voltage=1674.2mV  pH=6.22
+06:03:00.006 > [D][SENSOR] DO=3.93 mg/L  Sat=60.6%  Tdo=29.1°C
+06:03:00.008 > [I][SENSOR] @ 2026-05-17T06:03:00+07:00 | pH=6.22(OK) | DO=3.93 mg/L  Sat=60.6%  T=29.1°C (OK)
+06:03:00.018 > [W][ALERT] ALERT: DO 3.93 mg/L < min 9.00
+06:03:00.023 > [W][ALERT] Edge alert OUTPUT ON.
+06:03:00.023 > [W][MAIN] Threshold violation mask: 0x08
+06:03:00.344 > [I][FIREBASE] Alert pushed: DO_LOW (val=3.93)
+06:03:00.413 > [I][FIREBASE] Latest updated at 2026-05-17T06:03:00+07:00
+06:03:00.490 > [I][FIREBASE] History pushed at 2026-05-17T06:03:00+07:00
+06:03:00.491 > [D][BUFFER] Buffered reading 3/500
+06:03:00.561 > [I][MAIN] Buffer: 3/500 readings. Next measure in 600 s.
+06:03:00.561 > [I][MAIN] ──── Measurement cycle END ────
+06:03:30.138 > [I][ALERT] Edge alert OUTPUT OFF.
+06:13:00.546 > [I][MAIN] ──── Measurement cycle START ────
+06:13:00.746 > [D][SENSOR] pH Analog ADC=2079  Voltage=1675.4mV  pH=6.21
+06:13:00.855 > [D][SENSOR] DO=3.64 mg/L  Sat=56.4%  Tdo=29.3°C
+06:13:00.855 > [I][SENSOR] @ 2026-05-17T06:13:01+07:00 | pH=6.21(OK) | DO=3.64 mg/L  Sat=56.4%  T=29.3°C (OK)
+06:13:00.866 > [W][ALERT] ALERT: DO 3.64 mg/L < min 9.00
+06:13:00.870 > [W][ALERT] Edge alert OUTPUT ON.
+06:13:00.870 > [W][MAIN] Threshold violation mask: 0x08
+06:13:01.155 > [I][FIREBASE] Alert pushed: DO_LOW (val=3.64)
+06:13:01.214 > [I][FIREBASE] Latest updated at 2026-05-17T06:13:01+07:00
+06:13:01.270 > [I][FIREBASE] History pushed at 2026-05-17T06:13:01+07:00
+06:13:01.270 > [D][BUFFER] Buffered reading 4/500
+06:13:01.327 > [I][MAIN] Buffer: 4/500 readings. Next measure in 600 s.
+06:13:01.327 > [I][MAIN] ──── Measurement cycle END ────
+06:13:31.122 > [I][ALERT] Edge alert OUTPUT OFF.
+06:23:01.311 > [I][MAIN] ──── Measurement cycle START ────
+06:23:01.511 > [D][SENSOR] pH Analog ADC=2081  Voltage=1677.0mV  pH=6.21
+06:23:01.620 > [D][SENSOR] DO=3.34 mg/L  Sat=51.8%  Tdo=29.4°C
+06:23:01.622 > [I][SENSOR] @ 2026-05-17T06:23:01+07:00 | pH=6.21(OK) | DO=3.34 mg/L  Sat=51.8%  T=29.4°C (OK)
+06:23:01.631 > [W][ALERT] ALERT: DO 3.34 mg/L < min 9.00
+06:23:01.637 > [W][ALERT] Edge alert OUTPUT ON.
+06:23:01.637 > [W][MAIN] Threshold violation mask: 0x08
+06:23:01.923 > [I][FIREBASE] Alert pushed: DO_LOW (val=3.34)
+06:23:01.985 > [I][FIREBASE] Latest updated at 2026-05-17T06:23:01+07:00
+06:23:02.052 > [I][FIREBASE] History pushed at 2026-05-17T06:23:01+07:00
+06:23:02.052 > [D][BUFFER] Buffered reading 5/500
+06:23:02.108 > [I][MAIN] Buffer: 5/500 readings. Next measure in 600 s.
+06:23:02.108 > [I][MAIN] ──── Measurement cycle END ────
+06:23:32.106 > [I][ALERT] Edge alert OUTPUT OFF.
+06:27:46.108 > Token info: type = id token (GITKit token), status = on refreshing
+06:27:46.717 > Token info: type = id token (GITKit token), status = ready
+06:33:02.091 > [I][MAIN] ──── Measurement cycle START ────
+06:33:02.291 > [D][SENSOR] pH Analog ADC=2081  Voltage=1677.0mV  pH=6.21
+06:33:02.401 > [D][SENSOR] DO=3.01 mg/L  Sat=46.8%  Tdo=29.5°C
+06:33:02.401 > [I][SENSOR] @ 2026-05-17T06:33:02+07:00 | pH=6.21(OK) | DO=3.01 mg/L  Sat=46.8%  T=29.5°C (OK)
+06:33:02.412 > [W][ALERT] ALERT: DO 3.01 mg/L < min 9.00
+06:33:02.418 > [W][ALERT] Edge alert OUTPUT ON.
+06:33:02.418 > [W][MAIN] Threshold violation mask: 0x08
+06:33:02.755 > [I][FIREBASE] Alert pushed: DO_LOW (val=3.01)
+06:33:02.837 > [I][FIREBASE] Latest updated at 2026-05-17T06:33:02+07:00
+06:33:02.906 > [I][FIREBASE] History pushed at 2026-05-17T06:33:02+07:00
+06:33:02.906 > [D][BUFFER] Buffered reading 6/500
+06:33:02.993 > [I][MAIN] Buffer: 6/500 readings. Next measure in 600 s.
+06:33:02.993 > [I][MAIN] ──── Measurement cycle END ────
+06:33:32.705 > [I][ALERT] Edge alert OUTPUT OFF.
+06:42:52.628 > [I][MAIN] ==== Daily log upload START ====
+06:42:52.628 > [I][BUFFER] JSON serialised: 6 entries, 679 bytes
+06:42:52.633 > [I][FIREBASE] Uploading JSON array to RTDB: /devices/DCB4D91B9CB8/logs/2026-05-17
+06:42:52.928 > [I][FIREBASE] JSON upload OK. Key: -Osn9xkfu10qXrMMEs4D
+06:42:52.928 > [I][BUFFER] Buffer cleared.
+06:42:52.934 > [I][MAIN] Daily JSON uploaded and buffer cleared.
+06:42:53.186 > [I][MAIN] ==== Daily log upload END ====
+06:43:02.977 > [I][MAIN] ──── Measurement cycle START ────
+06:43:03.177 > [D][SENSOR] pH Analog ADC=2075  Voltage=1672.2mV  pH=6.22
+06:43:03.287 > [D][SENSOR] DO=2.66 mg/L  Sat=41.4%  Tdo=29.6°C
+06:43:03.287 > [I][SENSOR] @ 2026-05-17T06:43:03+07:00 | pH=6.22(OK) | DO=2.66 mg/L  Sat=41.4%  T=29.6°C (OK)
+06:43:03.299 > [W][ALERT] ALERT: DO 2.66 mg/L < min 9.00
+06:43:03.303 > [W][ALERT] Edge alert OUTPUT ON.
+06:43:03.303 > [W][MAIN] Threshold violation mask: 0x08
+06:43:03.632 > [I][FIREBASE] Alert pushed: DO_LOW (val=2.66)
+06:43:03.708 > [I][FIREBASE] Latest updated at 2026-05-17T06:43:03+07:00
+06:43:03.777 > [I][FIREBASE] History pushed at 2026-05-17T06:43:03+07:00
+06:43:03.777 > [D][BUFFER] Buffered reading 1/500
+06:43:03.847 > [I][MAIN] Buffer: 1/500 readings. Next measure in 600 s.
+06:43:03.848 > [I][MAIN] ──── Measurement cycle END ────
+06:43:33.691 > [I][ALERT] Edge alert OUTPUT OFF.
+06:43:38.909 > [I][FIREBASE] Config updated: interval=600000ms pH[5.0-7.0] DO_min=9.0
+06:43:38.914 > [I][FIREBASE]   -> pH calib: neutral=1450.0mV, slope=285.70mV/pH
+06:43:38.920 > [I][MAIN] Config refreshed. interval=600000 ms
+06:53:03.831 > [I][MAIN] ──── Measurement cycle START ────
+06:53:04.031 > [D][SENSOR] pH Analog ADC=2081  Voltage=1677.0mV  pH=6.21
+06:53:04.140 > [D][SENSOR] DO=2.27 mg/L  Sat=35.4%  Tdo=29.7°C
+06:53:04.140 > [I][SENSOR] @ 2026-05-17T06:53:04+07:00 | pH=6.21(OK) | DO=2.27 mg/L  Sat=35.4%  T=29.7°C (OK)
+06:53:04.151 > [W][ALERT] ALERT: DO 2.27 mg/L < min 9.00
+06:53:04.156 > [W][ALERT] Edge alert OUTPUT ON.
+06:53:04.156 > [W][MAIN] Threshold violation mask: 0x08
+06:53:04.435 > [I][FIREBASE] Alert pushed: DO_LOW (val=2.27)
+06:53:04.501 > [I][FIREBASE] Latest updated at 2026-05-17T06:53:04+07:00
+06:53:04.560 > [I][FIREBASE] History pushed at 2026-05-17T06:53:04+07:00
+06:53:04.560 > [D][BUFFER] Buffered reading 2/500
+06:53:04.610 > > ERROR.mUpdateEngine: Alen is less than _write_idx.
+06:53:04.610 > > ERROR.connected: Not connected because write error is set.
+06:53:04.616 > > ERROR.connected> WARN.mRunUntil: : SSL Internal error
+06:53:04.622 > Terminating with write error.
+06:53:04.627 > > ERROR.write: Failed while waiting for the engine to enter BR_SSL_SENDAPP.
+06:53:04.633 > > ERROR.available: SSL engine failed to update.
+06:53:04.638 > [I][MAIN] Buffer: 2/500 readings. Next measure in 600 s.
+06:53:04.644 > [I][MAIN] ──── Measurement cycle END ────
+06:53:34.676 > [I][ALERT] Edge alert OUTPUT OFF.
