@@ -142,31 +142,6 @@ AP_FALLBACK (bật AP để người dùng cấu hình WiFi qua app/web)
 
 ---
 
-## 6. Kiến trúc Firmware đề xuất (giữ nguyên & bổ sung theo Phase 1–4 đã thống nhất)
-
-```
-water-monitor/
-├── include/
-│   ├── config.h            (Hardware GPIO, interval, Modbus default — không chứa bí mật)
-│   ├── secrets.h            (BỊ IGNORE BỞI GIT — API key, mật khẩu)
-│   ├── types.h              (SensorReading, AlertLevel, DeviceState, ConnState — dùng chung)
-│   ├── ISensor.h             (Interface: bool read(SensorReading&))
-│   ├── PhSensor.h / DoSensor.h / CurrentSensor.h
-│   ├── AppConfig.h           (Đọc/lưu cấu hình ngưỡng, local + remote)
-│   ├── AlertManager.h        (Debounce, phân loại SENSOR_FAULT vs OUT_OF_RANGE)
-│   ├── NetManager.h           (State machine WiFi/HTTP Firebase theo Mục 5)
-│   └── OfflineBuffer.h        (Circular buffer + batch flush xuống flash)
-├── src/
-│   ├── main.cpp               (Khởi tạo Tasks, Queues, Mutex, WDT)
-│   ├── PhSensor.cpp / DoSensor.cpp / CurrentSensor.cpp
-│   ├── FirebaseManager.cpp
-│   ├── AlertManager.cpp
-│   ├── NetManager.cpp
-│   ├── OfflineBuffer.cpp
-│   └── OtaManager.cpp
-└── platformio.ini
-```
-
 **FreeRTOS Tasks bắt buộc:**
 | Task | Trách nhiệm | Ràng buộc |
 |---|---|---|
@@ -189,17 +164,7 @@ water-monitor/
 9. **DEVICE_ID phải duy nhất theo từng ao**, không được để giá trị mặc định giống nhau khi nhân bản code cho 3 bộ thiết bị.
 10. Khi có mâu thuẫn giữa yêu cầu mới trong hội thoại và tài liệu này, **AI agent phải hỏi lại người phụ trách trước khi tự ý thay đổi hành vi đã quy định ở đây**, không tự suy diễn.
 
----
 
-## 8. Checklist nghiệm thu (Definition of Done) trước khi coi 1 module là hoàn thành
-
-- [ ] Có xử lý retry + phân biệt `SENSOR_FAULT` cho mọi thao tác đọc Modbus.
-- [ ] Có debounce cấu hình được cho từng loại cảnh báo (pH, DO, dòng điện).
-- [ ] Có offline buffer + backfill kèm cờ `is_backfilled` và timestamp đã hiệu chỉnh.
-- [ ] Kết nối HTTP dùng HTTPS, có cơ chế Heartbeat/Presence, có chu kỳ gửi hợp lý, có exponential backoff khi reconnect.
-- [ ] Relay có trạng thái fail-safe rõ ràng khi mất điện/reset/WDT.
-- [ ] Có giám sát brownout và log sự kiện restart bất thường.
-- [ ] LED phân biệt được tối thiểu 4 trạng thái theo Mục 4.12.
 - [ ] OTA có cơ chế rollback tự động nếu firmware mới không "healthy" sau X phút.
 - [ ] DEVICE_ID và đường dẫn Firebase là duy nhất, không đụng giữa 3 thiết bị.
 - [ ] Không có đoạn code nào chặn (blocking) quá 1 chu kỳ đo trong `measureTask`.
