@@ -1,9 +1,4 @@
 #pragma once
-// ============================================================
-//  alert_manager.h — Quản lý cảnh báo v2.2.1
-//  Debounce (chỉ kích cảnh báo sau N lần liên tiếp)
-//  Relay hoạt động dạng Oscillator chu kỳ (ví dụ bật 10s tắt 50s)
-// ============================================================
 
 #include "types.h"
 #include <Arduino.h>
@@ -36,7 +31,7 @@ private:
     uint32_t _durationMs;
     bool     _active;
     bool     _relay1Enabled;
-    uint8_t  _currentFiredMask; // Lưu lại mask lỗi hiện tại để tính toán chu kỳ nhấp nháy
+    uint8_t  _currentFiredMask;
 
     // Oscillator state cho pH/DO (Chu kỳ bật/tắt)
     bool     _relayState;

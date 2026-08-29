@@ -1,9 +1,4 @@
-// ============================================================
 //  main.cpp  v2.2 — Smart Water Monitoring System (Refactored)
-//  3 cảm biến RS485 Modbus RTU (pH, DO, PZEM) chung 1 bus
-//  busMutex + debounce + offline buffer + heartbeat
-// ============================================================
-
 #include <Arduino.h>
 #include <esp_task_wdt.h>
 #include <time.h>
@@ -209,7 +204,7 @@ void setup() {
 
     // Tạo FreeRTOS tasks
     xTaskCreatePinnedToCore(sysTask,     "SysTask",     16384,  NULL, 5, NULL, 1);
-    xTaskCreatePinnedToCore(measureTask, "MeasureTask", 32768,  NULL, 3, NULL, 1);
+    xTaskCreatePinnedToCore(measureTask, "MeasureTask", 49152,  NULL, 3, NULL, 1); // 48KB — tránh stack overflow (Guru Meditation)
     xTaskCreatePinnedToCore(cloudTask,   "CloudTask",   32768,  NULL, 2, NULL, 0);
 
     vTaskDelete(NULL);
@@ -220,13 +215,24 @@ void loop() {}
 // ── sysTask — WDT, LED, alert tick ───────────────────────────
 static void sysTask(void* pvParameters) {
     esp_task_wdt_add(NULL);
+    uint32_t lastStackLogMs = 0;
     while(1) {
+        esp_task_wdt_reset();  // Reset WDT ĐẦU TIÊN — tránh timeout khi maintain() block
+
         WifiMgr::maintain();
         firebaseManager.maintain();
         StatusLed::setFirebaseReady(firebaseManager.isReady());
         StatusLed::tick();
         alertManager.tick();
-        esp_task_wdt_reset();
+
+        // Log stack high-water mark mỗi 10 phút (debug)
+        if (millis() - lastStackLogMs >= 600000UL) {
+            lastStackLogMs = millis();
+            LOG_D(TAG, "[Health] SysTask stack HWM: %u words | Free heap: %u B | Min heap: %u B",
+                  uxTaskGetStackHighWaterMark(NULL), ESP.getFreeHeap(), ESP.getMinFreeHeap());
+        }
+
+        esp_task_wdt_reset();  // Reset WDT cuối — phòng trường hợp maintain() mất lâu
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
@@ -335,6 +341,15 @@ static void measureTask(void* pvParameters) {
             LOG_I(TAG, "Buffer: %u/%u readings. Next measure in %lu s.",
                   (unsigned)offlineBuffer.getCount(), OFFLINE_BUFFER_SIZE,
                   interval / 1000UL);
+
+            // Stack high-water mark — phát hiện nguy cơ stack overflow sớm
+            UBaseType_t stackHWM = uxTaskGetStackHighWaterMark(NULL);
+            LOG_D(TAG, "MeasureTask stack HWM: %u words (%u bytes free)",
+                  stackHWM, stackHWM * sizeof(StackType_t));
+            if (stackHWM < 512) {
+                LOG_E(TAG, "CRITICAL: MeasureTask stack almost full! HWM=%u words", stackHWM);
+            }
+
             LOG_I(TAG, "──── Measurement cycle END ────");
         }
         vTaskDelay(pdMS_TO_TICKS(1000));
@@ -344,8 +359,9 @@ static void measureTask(void* pvParameters) {
 // ── cloudTask — Upload, config, commands, heartbeat, backfill ──
 static void cloudTask(void* pvParameters) {
     esp_task_wdt_add(NULL);
-    uint32_t lastConfigPollMs  = 0;
-    uint32_t lastCommandPollMs = 0;
+    uint32_t lastConfigPollMs   = 0;
+    uint32_t lastCommandPollMs  = 0;
+    uint32_t lastHeartbeatMs    = 0;
 
     while(1) {
         esp_task_wdt_reset();
@@ -486,6 +502,13 @@ static void cloudTask(void* pvParameters) {
                     }
                 }
 
+            }
+
+            // ── Heartbeat — giữ SSL connection sống ──────────
+            if (now - lastHeartbeatMs >= HEARTBEAT_INTERVAL_MS) {
+                lastHeartbeatMs = now;
+                firebaseManager.updateDeviceStatus();
+                LOG_D(TAG, "Heartbeat sent. Heap: %u B", ESP.getFreeHeap());
             }
 
             // ── Bù dữ liệu offline (Backfill) ────────────────

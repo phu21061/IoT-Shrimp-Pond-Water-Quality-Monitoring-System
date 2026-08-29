@@ -1,16 +1,11 @@
 #pragma once
-// ============================================================
-//  types.h — Shared Data Structures  v2.2
-//  Cập nhật: thêm PZEM-016, debounce, AlertType mở rộng
-// ============================================================
+
 
 #include <Arduino.h>
 
-// ─────────────────────────────────────────────────────────────
-//  Sensor reading (one measurement cycle — 3 sensors)
-// ─────────────────────────────────────────────────────────────
+
 struct SensorReading {
-    // pH (RS485 Modbus — RS-PH-N01-3)
+    
     float   ph;               // Giá trị pH (0-14)
     float   phTemperature;    // Nhiệt độ từ cảm biến pH (°C)
     bool    phValid;          // false nếu cảm biến pH lỗi (SENSOR_FAULT)
@@ -125,9 +120,6 @@ struct RemoteConfig {
     bool                valid;            // true khi đã fetch thành công
 };
 
-// ─────────────────────────────────────────────────────────────
-//  System state machine
-// ─────────────────────────────────────────────────────────────
 enum class SystemState : uint8_t {
     BOOTING,
     AP_CONFIG,
@@ -136,9 +128,9 @@ enum class SystemState : uint8_t {
     IDLE,
     MEASURING,
     UPLOADING,
-    ALERT_ACTIVE,     // threshold violation in progress
+    ALERT_ACTIVE,    
     ERROR_WIFI,
     ERROR_FIREBASE,
     ERROR_SENSOR,
-    OTA_IN_PROGRESS       // Đang tải firmware OTA
+    OTA_IN_PROGRESS       
 };

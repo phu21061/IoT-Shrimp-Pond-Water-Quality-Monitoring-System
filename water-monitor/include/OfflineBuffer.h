@@ -1,8 +1,4 @@
-#pragma once
-// ============================================================
-//  OfflineBuffer.h — Circular buffer trong PSRAM cho dữ liệu offline
-//  Thread-safe với _mutex, hỗ trợ pop batch upload (v2.2.1)
-// ============================================================
+
 
 #include "types.h"
 #include <Arduino.h>

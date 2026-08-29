@@ -38,10 +38,3 @@ Dia chi thanh ghi | Ham ho tro | Y nghia
 0x0008            | 0x04       | He so cong suat (Power Factor) - 16-bit, do phan giai 0.01/LSB
 0x0009            | 0x04       | Trang thai canh bao (0xFFFF: Co canh bao; 0x0000: Khong co canh bao)
 0x0002            | 0x06       | Dia chi thiet bi (Modbus RTU address): 0x01-0xF7 (mac dinh 0x01) -> CAN GHI DE DAT DIA CHI RIENG, TRANH TRUNG VOI 1,2,3
-
-GHI CHU TONG HOP:
-- Ca 3 thiet bi dung chung 1 cong RS485, moi thiet bi PHAI co Slave ID rieng biet.
-- Hien tai: pH = 3, DO = 2, PZEM = 1 (can xac nhan lai PZEM bang scan thuc te, tranh trung voi pH/DO).
-- Baudrate cua ca 3 thiet bi PHAI GIONG NHAU tren cung 1 bus (dang dung 9600).
-- Thanh ghi dat dia chi khac nhau giua cac loai cam bien: pH/DO dung 0x07D0, PZEM dung 0x0002.
-- Cam bien DO tra ve du lieu dang so thuc dau phay dong (float) Big Endian 32-bit (2 thanh ghi/gia tri), khac voi pH va PZEM dung so nguyen 16/32-bit.

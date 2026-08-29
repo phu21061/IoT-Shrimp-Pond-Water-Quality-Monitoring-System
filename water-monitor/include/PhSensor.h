@@ -1,9 +1,4 @@
 #pragma once
-// ============================================================
-//  PhSensor.h — Cảm biến pH RS485 Modbus RTU (RS-PH-N01-3)
-//  Slave ID = 3, Baudrate = 9600
-//  Thanh ghi: 0x0000 = pH (uint16 /100), 0x0001 = Temp (int16 /10)
-// ============================================================
 
 #include "ISensor.h"
 #include <HardwareSerial.h>

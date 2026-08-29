@@ -1,8 +1,3 @@
-// ============================================================
-//  firebase_client.cpp — Firebase RTDB Client v2.2
-//  Thêm: PZEM fields, tách pushHistory, heartbeat, backfill
-// ============================================================
-
 #include "firebase_client.h"
 #include "config.h"
 #include <addons/TokenHelper.h>
@@ -11,8 +6,9 @@
 #include <WiFi.h>
 
 static const char* TAG = "FIREBASE";
+static const uint8_t MAX_CONSECUTIVE_ERRORS = 5; // Reset Firebase sau N lỗi liên tiếp
 
-FirebaseManager::FirebaseManager() : _ready(false) {}
+FirebaseManager::FirebaseManager() : _ready(false), _consecutiveErrors(0) {}
 
 void FirebaseManager::begin() {
     LOG_I(TAG, "Initialising Firebase v2 ...");
@@ -37,6 +33,35 @@ void FirebaseManager::begin() {
 
 void FirebaseManager::maintain() {
     _ready = Firebase.ready();
+    if (_ready && _consecutiveErrors > 0) {
+        LOG_I(TAG, "Firebase connection restored (was %u consecutive errors).", _consecutiveErrors);
+        _consecutiveErrors = 0;
+    }
+}
+
+// ── SSL Error Recovery ────────────────────────────────────────
+// Khi SSL connection bị hỏng (lỗi liên tiếp), ta cần:
+// 1. Stop WiFi client bên trong FirebaseData để giải phóng SSL session cũ
+// 2. Clear data buffer
+// 3. Để thao tác kế tiếp tạo kết nối mới
+void FirebaseManager::_handleError(FirebaseData& fbData, const char* operation) {
+    _consecutiveErrors++;
+    LOG_W(TAG, "%s failed (consecutive: %u/%u): %s",
+          operation, _consecutiveErrors, MAX_CONSECUTIVE_ERRORS,
+          fbData.errorReason().c_str());
+
+    // Giải phóng SSL session cũ để tránh memory leak
+    fbData.clear();
+
+    if (_consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
+        LOG_E(TAG, "Too many consecutive errors (%u). Stopping WiFi clients to force reconnect.",
+              _consecutiveErrors);
+        // Stop cả 2 FirebaseData objects để giải phóng SSL sessions
+        _fbData.stopWiFiClient();
+        _fbDataCloud.stopWiFiClient();
+        _consecutiveErrors = 0;
+        LOG_I(TAG, "WiFi clients stopped. Next operation will create fresh SSL connections.");
+    }
 }
 
 bool FirebaseManager::isReady() const {
@@ -95,8 +120,9 @@ bool FirebaseManager::setLatest(const SensorReading& r) {
     bool success = true;
     if (Firebase.RTDB.setJSON(&_fbData, FB_PATH_LATEST, &fbJson)) {
         LOG_I(TAG, "Latest updated at %s", r.isoTimestamp);
+        _consecutiveErrors = 0;  // Reset on success
     } else {
-        LOG_E(TAG, "setLatest failed: %s", _fbData.errorReason().c_str());
+        _handleError(_fbData, "setLatest");
         success = false;
     }
 
@@ -118,10 +144,11 @@ bool FirebaseManager::pushHistory(const SensorReading& r, bool isBackfilled) {
     if (Firebase.RTDB.pushJSON(&_fbData, FB_PATH_HISTORY, &fbJson)) {
         LOG_I(TAG, "History pushed at %s%s", r.isoTimestamp,
               isBackfilled ? " (backfilled)" : "");
+        _consecutiveErrors = 0;
         return true;
     }
 
-    LOG_E(TAG, "pushHistory failed: %s", _fbData.errorReason().c_str());
+    _handleError(_fbData, "pushHistory");
     return false;
 }
 
@@ -139,10 +166,11 @@ bool FirebaseManager::pushHistoryFull(const SensorReading& r, bool isBackfilled)
     if (Firebase.RTDB.pushJSON(&_fbData, FB_PATH_HISTORY_FULL, &fbJson)) {
         LOG_I(TAG, "History Full pushed at %s%s", r.isoTimestamp,
               isBackfilled ? " (backfilled)" : "");
+        _consecutiveErrors = 0;
         return true;
     }
 
-    LOG_E(TAG, "pushHistoryFull failed: %s", _fbData.errorReason().c_str());
+    _handleError(_fbData, "pushHistoryFull");
     return false;
 }
 
@@ -195,9 +223,10 @@ bool FirebaseManager::sendAlert(const AlertRecord& alert) {
 
     if (Firebase.RTDB.pushJSON(&_fbData, FB_PATH_ALERTS, &fbJson)) {
         LOG_I(TAG, "Alert pushed: %s", errors.c_str());
+        _consecutiveErrors = 0;
         return true;
     }
-    LOG_E(TAG, "sendAlert failed: %s", _fbData.errorReason().c_str());
+    _handleError(_fbData, "sendAlert");
     return false;
 }
 

@@ -1,8 +1,3 @@
-// ============================================================
-//  DoSensor.cpp — Cảm biến DO RS485 Modbus RTU (RS-LDOS-N01)
-//  v2.2 — Shared serial, busMutex, retry logic
-// ============================================================
-
 #include "DoSensor.h"
 #include <Arduino.h>
 #include "config.h"

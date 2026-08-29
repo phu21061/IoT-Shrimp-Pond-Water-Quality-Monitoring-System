@@ -1,8 +1,3 @@
-// ============================================================
-//  alert_manager.cpp — Quản lý cảnh báo v2.2.1
-//  Debounce + Phân biệt SENSOR_FAULT / VALUE_OUT_OF_RANGE
-//  Sửa lỗi còi kêu liên tục bằng Oscillator (Chu kỳ Bật/Tắt)
-// ============================================================
 
 #include "alert_manager.h"
 #include "config.h"
@@ -26,7 +21,6 @@ inline void AlertManager::_pinWrite(int pin, uint8_t val) {
 void AlertManager::updateRelayPins(bool state) {
     if (_relayState != state) {
         _relayState = state;
-        // Chỉ hú còi (Relay 1) nếu được phép
         if (_relay1Enabled) {
             _pinWrite(_relay1Pin, state ? HIGH : LOW);
         } else {

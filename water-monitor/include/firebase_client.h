@@ -57,7 +57,9 @@ private:
     FirebaseAuth _fbAuth;
     FirebaseConfig _fbConfig;
     bool _ready;
+    uint8_t _consecutiveErrors;  // Đếm lỗi SSL liên tiếp để trigger recovery
 
     void pushDefaultConfig();
     void buildSensorJson(const SensorReading& r, String& jsonOut, bool isBackfilled = false, bool includePzem = true);
+    void _handleError(FirebaseData& fbData, const char* operation);
 };

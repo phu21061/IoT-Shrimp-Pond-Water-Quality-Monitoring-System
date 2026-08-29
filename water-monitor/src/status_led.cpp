@@ -1,13 +1,3 @@
-// ============================================================
-//  status_led.cpp — LED trạng thái v2.2
-//  GPIO4 — Pattern theo README mục 4.12:
-//    WiFi lỗi       → nháy chậm 1s
-//    Firebase lỗi   → nháy nhanh 0.5s
-//    Cả hai lỗi     → nháy liên tục (100ms)
-//    Tất cả OK      → sáng liên tục
-//    AP Config      → double flash mỗi 2s
-// ============================================================
-
 #include "status_led.h"
 #include "config.h"
 #include "wifi_manager.h"

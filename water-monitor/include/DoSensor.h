@@ -1,12 +1,4 @@
 #pragma once
-// ============================================================
-//  DoSensor.h — Cảm biến DO RS485 Modbus RTU (RS-LDOS-N01-2-20-EX)
-//  Slave ID = 2, Baudrate = 9600
-//  Thanh ghi: 0x0000-0x0001 = Bão hòa (float)
-//             0x0002-0x0003 = DO mg/L (float)
-//             0x0004-0x0005 = Nhiệt độ (float)
-// ============================================================
-
 #include "ISensor.h"
 #include <HardwareSerial.h>
 #include <freertos/semphr.h>
