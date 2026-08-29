@@ -151,24 +151,6 @@ AP_FALLBACK (bật AP để người dùng cấu hình WiFi qua app/web)
 
 ---
 
-## 7. Quy tắc bắt buộc cho AI Agent khi triển khai code
 
-1. **Không hardcode ngưỡng cảnh báo, thời gian debounce, hay thông tin WiFi/Firebase** trực tiếp trong logic xử lý — luôn đọc từ `AppConfig`/`secrets.h`.
-2. **Không viết bất kỳ đoạn code nào dùng `delay()` chặn trong `netTask` hoặc `measureTask`** để chờ mạng — vi phạm nguyên tắc edge-first & event-driven ở Mục 5.
-3. **Không gộp trạng thái lỗi cảm biến với trạng thái vượt ngưỡng** trong bất kỳ hàm đánh giá cảnh báo nào (Mục 4.1).
-4. **Mọi truy cập bus RS485 phải qua `busMutex`**, không có ngoại lệ, kể cả khi chỉ đọc 1 cảm biến.
-5. **Không ghi flash/NVS mỗi chu kỳ đo** — chỉ ghi theo batch hoặc khi có thay đổi trạng thái quan trọng (Mục 4.3).
-6. **Relay điều khiển quạt oxy mặc định phải ở trạng thái an toàn theo kiểu fail-safe (NC)** — không tự ý đổi sang thiết kế NO trừ khi có xác nhận từ người phụ trách phần cứng.
-7. **Mọi lệnh nhận từ app qua HTTP/Firebase (polling hoặc SSE) phải xử lý idempotent**, kèm kiểm tra timestamp/mã lệnh để loại lệnh cũ.
-8. **Mọi kết nối HTTP phải thông qua HTTPS (port 443)** trong cấu hình mặc định của môi trường thật để đảm bảo an toàn.
-9. **DEVICE_ID phải duy nhất theo từng ao**, không được để giá trị mặc định giống nhau khi nhân bản code cho 3 bộ thiết bị.
-10. Khi có mâu thuẫn giữa yêu cầu mới trong hội thoại và tài liệu này, **AI agent phải hỏi lại người phụ trách trước khi tự ý thay đổi hành vi đã quy định ở đây**, không tự suy diễn.
-
-
-- [ ] OTA có cơ chế rollback tự động nếu firmware mới không "healthy" sau X phút.
-- [ ] DEVICE_ID và đường dẫn Firebase là duy nhất, không đụng giữa 3 thiết bị.
-- [ ] Không có đoạn code nào chặn (blocking) quá 1 chu kỳ đo trong `measureTask`.
-
----
 
 *Tài liệu này nên được cập nhật song song với code — mọi thay đổi hành vi hệ thống phải phản ánh lại vào README này trước khi merge.*
